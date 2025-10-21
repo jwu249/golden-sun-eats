@@ -3,15 +3,18 @@ import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-muted/50 to-muted border-t border-border">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-gradient-to-b from-background via-primary/5 to-muted border-t-4 border-primary/30 relative">
+      {/* Decorative pattern */}
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'var(--pattern-clouds)' }} />
+      
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img src={logo} alt="Golden Sun" className="w-16 h-16 object-contain" />
               <div>
-                <h3 className="font-bold text-xl text-foreground">Golden Sun</h3>
-                <p className="text-sm text-muted-foreground">Restaurant</p>
+                <h3 className="font-bold text-xl text-foreground font-cinzel tracking-wide">Golden Sun</h3>
+                <p className="text-sm text-muted-foreground font-noto">金太阳 Restaurant</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm">
@@ -21,7 +24,7 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground text-lg">Contact</h4>
+            <h4 className="font-semibold text-foreground text-lg font-cinzel border-b-2 border-primary/30 pb-2">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -43,7 +46,7 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground text-lg">Hours</h4>
+            <h4 className="font-semibold text-foreground text-lg font-cinzel border-b-2 border-primary/30 pb-2">Hours</h4>
             <div className="text-sm text-muted-foreground space-y-1">
               <p>Mon: <span className="text-destructive font-semibold">Closed</span></p>
               <p>Tue-Thu: 11:00 AM - 8:30 PM</p>

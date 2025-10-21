@@ -8,40 +8,43 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 42 45% 97%;
-    --foreground: 25 30% 15%;
+    --background: 40 15% 96%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 25 30% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 25 30% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 28 88% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 85% 45%;
+    --primary-foreground: 45 100% 98%;
 
-    --secondary: 0 72% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 0 0% 10%;
 
     --muted: 40 20% 92%;
-    --muted-foreground: 25 15% 45%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 35 85% 55%;
-    --accent-foreground: 25 30% 15%;
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 25% 88%;
-    --input: 40 25% 88%;
-    --ring: 28 88% 58%;
+    --border: 0 10% 88%;
+    --input: 0 10% 88%;
+    --ring: 0 85% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
     
-    --gradient-hero: linear-gradient(135deg, hsl(28 88% 58%), hsl(35 85% 55%));
-    --gradient-accent: linear-gradient(180deg, hsl(0 72% 45%), hsl(0 60% 38%));
-    --shadow-warm: 0 10px 40px -10px hsl(28 88% 58% / 0.3);
+    --gradient-hero: linear-gradient(135deg, hsl(0 85% 45%), hsl(0 75% 35%));
+    --gradient-accent: linear-gradient(180deg, hsl(45 95% 55%), hsl(40 90% 50%));
+    --gradient-red-gold: linear-gradient(to right, hsl(0 85% 45%), hsl(45 95% 55%));
+    --shadow-warm: 0 10px 40px -10px hsl(0 85% 45% / 0.4);
+    --shadow-gold: 0 10px 30px -10px hsl(45 95% 55% / 0.5);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --pattern-clouds: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12zm0-20c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z' fill='%23d4af37' fill-opacity='0.05'/%3E%3C/svg%3E");
 
     --sidebar-background: 0 0% 98%;
 
@@ -61,33 +64,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 25 35% 8%;
-    --foreground: 42 35% 95%;
+    --background: 0 0% 8%;
+    --foreground: 45 100% 98%;
 
-    --card: 25 30% 12%;
-    --card-foreground: 42 35% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 45 100% 98%;
 
-    --popover: 25 30% 12%;
-    --popover-foreground: 42 35% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 45 100% 98%;
 
-    --primary: 28 88% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 85% 45%;
+    --primary-foreground: 45 100% 98%;
 
-    --secondary: 0 72% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 45 95% 55%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 25 20% 20%;
-    --muted-foreground: 42 20% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 45 30% 65%;
 
-    --accent: 35 85% 55%;
-    --accent-foreground: 25 35% 8%;
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 25 25% 22%;
-    --input: 25 25% 22%;
-    --ring: 28 88% 58%;
+    --border: 0 10% 22%;
+    --input: 0 10% 22%;
+    --ring: 0 85% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -106,5 +109,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Noto Serif SC', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
   }
 }
