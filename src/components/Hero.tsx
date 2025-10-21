@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import pandaDecoration from "@/assets/panda-decoration.png";
+import dragonDecoration from "@/assets/dragon-decoration.png";
+import pandaSmall from "@/assets/panda-small.png";
 
 export const Hero = () => {
   const scrollToMenu = () => {
@@ -11,6 +14,32 @@ export const Hero = () => {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background">
       {/* Traditional cloud pattern background */}
       <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'var(--pattern-clouds)' }} />
+      
+      {/* Cartoon character decorations */}
+      <img 
+        src={pandaDecoration} 
+        alt="" 
+        className="absolute left-8 top-24 w-32 h-32 md:w-48 md:h-48 opacity-80 animate-pulse hidden md:block"
+        style={{ animationDuration: '3s' }}
+      />
+      <img 
+        src={dragonDecoration} 
+        alt="" 
+        className="absolute right-8 top-32 w-32 h-32 md:w-48 md:h-48 opacity-80 animate-pulse hidden md:block"
+        style={{ animationDuration: '4s' }}
+      />
+      <img 
+        src={pandaSmall} 
+        alt="" 
+        className="absolute left-16 bottom-24 w-16 h-16 md:w-24 md:h-24 opacity-70 animate-pulse hidden lg:block"
+        style={{ animationDuration: '2.5s' }}
+      />
+      <img 
+        src={pandaSmall} 
+        alt="" 
+        className="absolute right-24 bottom-32 w-16 h-16 md:w-20 md:h-20 opacity-70 animate-pulse hidden lg:block"
+        style={{ animationDuration: '3.5s' }}
+      />
       
       {/* Decorative corner elements */}
       <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary opacity-60" />

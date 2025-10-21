@@ -2,12 +2,28 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { menuData } from "@/data/menuData";
+import dragonDecoration from "@/assets/dragon-decoration.png";
+import pandaSmall from "@/assets/panda-small.png";
 
 export const Menu = () => {
   return (
-    <section id="menu" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative">
+    <section id="menu" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'var(--pattern-clouds)' }} />
+      
+      {/* Floating cartoon decorations */}
+      <img 
+        src={dragonDecoration} 
+        alt="" 
+        className="absolute right-4 top-20 w-24 h-24 md:w-32 md:h-32 opacity-60 animate-pulse hidden lg:block"
+        style={{ animationDuration: '4s' }}
+      />
+      <img 
+        src={pandaSmall} 
+        alt="" 
+        className="absolute left-8 top-1/3 w-16 h-16 md:w-20 md:h-20 opacity-50 animate-pulse hidden lg:block"
+        style={{ animationDuration: '3s' }}
+      />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-6 mb-12">
