@@ -10,7 +10,7 @@ import { useCart } from "@/contexts/CartContext";
 import { ShoppingCart } from "lucide-react";
 
 export const Menu = () => {
-  const [selectedItem, setSelectedItem] = useState<{ name: string; price: string; details?: string; category: string } | null>(null);
+  const [selectedItem, setSelectedItem] = useState<{ name: string; price: string; details?: string; imageUrl?: string; category: string } | null>(null);
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
@@ -110,9 +110,19 @@ export const Menu = () => {
             <DialogTitle className="font-noto text-xl">{selectedItem?.name}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-              <ShoppingCart className="w-16 h-16 text-primary/40" />
-            </div>
+            {selectedItem?.imageUrl ? (
+              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden">
+                <img 
+                  src={selectedItem.imageUrl} 
+                  alt={selectedItem.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
+                <ShoppingCart className="w-16 h-16 text-primary/40" />
+              </div>
+            )}
             {selectedItem?.details && (
               <p className="text-muted-foreground font-noto">{selectedItem.details}</p>
             )}
