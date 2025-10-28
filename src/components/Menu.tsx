@@ -2,22 +2,33 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { menuData } from "@/data/menuData";
-import dragonDecoration from "@/assets/dragon-decoration.png";
 import pandaSmall from "@/assets/panda-small.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useCart } from "@/contexts/CartContext";
+import { ShoppingCart } from "lucide-react";
 
 export const Menu = () => {
+  const [selectedItem, setSelectedItem] = useState<{ name: string; price: string; details?: string; category: string } | null>(null);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    if (selectedItem) {
+      addToCart({
+        ...selectedItem,
+        price: parseFloat(selectedItem.price)
+      });
+      setSelectedItem(null);
+    }
+  };
+
   return (
     <section id="menu" className="py-20 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'var(--pattern-clouds)' }} />
       
       {/* Floating cartoon decorations */}
-      <img 
-        src={dragonDecoration} 
-        alt="" 
-        className="absolute right-4 top-20 w-24 h-24 md:w-32 md:h-32 opacity-60 animate-pulse hidden lg:block"
-        style={{ animationDuration: '4s' }}
-      />
       <img 
         src={pandaSmall} 
         alt="" 
@@ -67,7 +78,8 @@ export const Menu = () => {
                 {items.map((item, index) => (
                   <Card 
                     key={index} 
-                    className="p-5 hover:shadow-xl transition-all hover:scale-[1.02] border-2 border-primary/20 hover:border-primary/50 bg-card/80 backdrop-blur-sm relative overflow-hidden group"
+                    onClick={() => setSelectedItem({ ...item, category })}
+                    className="p-5 hover:shadow-xl transition-all hover:scale-[1.02] border-2 border-primary/20 hover:border-primary/50 bg-card/80 backdrop-blur-sm relative overflow-hidden group cursor-pointer"
                   >
                     {/* Decorative corner */}
                     <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-secondary/40" />
@@ -91,6 +103,28 @@ export const Menu = () => {
           ))}
         </Tabs>
       </div>
+
+      <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-noto text-xl">{selectedItem?.name}</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
+              <ShoppingCart className="w-16 h-16 text-primary/40" />
+            </div>
+            {selectedItem?.details && (
+              <p className="text-muted-foreground font-noto">{selectedItem.details}</p>
+            )}
+            <div className="flex items-center justify-between pt-4 border-t">
+              <span className="text-2xl font-bold text-primary font-cinzel">${selectedItem?.price}</span>
+              <Button onClick={handleAddToCart} className="font-cinzel">
+                Add to Cart
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

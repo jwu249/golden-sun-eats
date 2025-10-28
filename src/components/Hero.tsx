@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import pandaDecoration from "@/assets/panda-decoration.png";
-import dragonDecoration from "@/assets/dragon-decoration.png";
 import pandaSmall from "@/assets/panda-small.png";
 
 export const Hero = () => {
@@ -21,12 +20,6 @@ export const Hero = () => {
         alt="" 
         className="absolute left-8 top-24 w-32 h-32 md:w-48 md:h-48 opacity-80 animate-pulse hidden md:block"
         style={{ animationDuration: '3s' }}
-      />
-      <img 
-        src={dragonDecoration} 
-        alt="" 
-        className="absolute right-8 top-32 w-32 h-32 md:w-48 md:h-48 opacity-80 animate-pulse hidden md:block"
-        style={{ animationDuration: '4s' }}
       />
       <img 
         src={pandaSmall} 

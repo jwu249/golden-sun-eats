@@ -4,27 +4,20 @@ import { About } from "@/components/About";
 import { Menu } from "@/components/Menu";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { CartProvider } from "@/contexts/CartContext";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <div id="hero">
-          <Hero />
-        </div>
-        <div id="about">
-          <About />
-        </div>
-        <div id="menu">
-          <Menu />
-        </div>
-        <div id="contact">
-          <Contact />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <Hero />
+        <About />
+        <Menu />
+        <Contact />
+        <Footer />
+      </div>
+    </CartProvider>
   );
 };
 

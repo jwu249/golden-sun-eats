@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { CartSheet } from "./CartSheet";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,6 +64,7 @@ export const Navigation = () => {
             >
               Contact
             </Button>
+            <CartSheet />
             <Button 
               className="bg-gradient-to-r from-primary to-accent hover:shadow-lg transition-all"
               asChild
@@ -109,6 +111,9 @@ export const Navigation = () => {
             >
               Contact
             </Button>
+            <div className="px-2">
+              <CartSheet />
+            </div>
             <Button 
               className="w-full bg-gradient-to-r from-primary to-accent"
               asChild
