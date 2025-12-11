@@ -1,3 +1,13 @@
+import porkEggRoll from '@/assets/pork_egg_roll.png';
+import generalTsosChicken from '@/assets/general-tsos-chicken.png';
+import beefBroccoli from '@/assets/beef-broccoli.png';
+import chickenFriedRice from '@/assets/chicken-fried-rice.png';
+import loMein from '@/assets/lo-mein.png';
+import sweetSourChicken from '@/assets/sweet-sour-chicken.png';
+import hotSourSoup from '@/assets/hot-sour-soup.png';
+import kungPaoChicken from '@/assets/kung-pao-chicken.png';
+import shrimpBroccoli from '@/assets/shrimp-broccoli.png';
+
 export interface MenuItem {
   name: string;
   price: string;
@@ -11,7 +21,7 @@ export interface MenuData {
 
 export const menuData: MenuData = {
   appetizers: [
-    { name: "Pork Egg Roll", price: "2.25", details: "(1)" },
+    { name: "Pork Egg Roll", price: "2.25", details: "(1)", imageUrl: porkEggRoll },
     { name: "Vegetable Spring Rolls", price: "4.00", details: "(2)" },
     { name: "Crabmeat Rangoon", price: "7.95", details: "(6)" },
     { name: "Fried Chicken Wing", price: "9.45", details: "(8)" },
@@ -25,7 +35,7 @@ export const menuData: MenuData = {
     { name: "Teriyaki Beef Stick", price: "11.95", details: "(4)" },
   ],
   soup: [
-    { name: "Hot & Sour Soup", price: "4.95" },
+    { name: "Hot & Sour Soup", price: "4.95", imageUrl: hotSourSoup },
     { name: "Egg Drop Soup", price: "3.95" },
     { name: "Wonton Soup", price: "4.95" },
     { name: "Wonton Egg Drop Soup", price: "5.95" },
@@ -36,7 +46,7 @@ export const menuData: MenuData = {
   friedRice: [
     { name: "Plain Fried Rice", price: "7.45" },
     { name: "Vegetable Fried Rice", price: "8.45" },
-    { name: "Chicken Fried Rice", price: "8.45" },
+    { name: "Chicken Fried Rice", price: "8.45", imageUrl: chickenFriedRice },
     { name: "Pork Fried Rice", price: "8.45" },
     { name: "Beef Fried Rice", price: "8.45" },
     { name: "Jumbo Shrimp Fried Rice", price: "10.45" },
@@ -46,7 +56,7 @@ export const menuData: MenuData = {
   loMein: [
     { name: "Plain Lo Mein", price: "9.95" },
     { name: "Vegetable Lo Mein", price: "10.95" },
-    { name: "Chicken Lo Mein", price: "10.95" },
+    { name: "Chicken Lo Mein", price: "10.95", imageUrl: loMein },
     { name: "Pork Lo Mein", price: "10.95" },
     { name: "Beef Lo Mein", price: "11.95" },
     { name: "Shrimp Lo Mein", price: "12.45" },
@@ -82,7 +92,7 @@ export const menuData: MenuData = {
     { name: "House Special Egg Foo Young", price: "10.95" },
   ],
   sweetAndSour: [
-    { name: "Sweet & Sour Chicken", price: "10.25" },
+    { name: "Sweet & Sour Chicken", price: "10.25", imageUrl: sweetSourChicken },
     { name: "Sweet & Sour Pork", price: "10.25" },
     { name: "Sweet & Sour Shrimp", price: "11.45" },
   ],
@@ -96,7 +106,7 @@ export const menuData: MenuData = {
     { name: "Chicken w. Garlic Sauce", price: "10.45" },
     { name: "Curry Chicken", price: "10.45" },
     { name: "Hunan Chicken", price: "10.45" },
-    { name: "Kung Pao Chicken", price: "10.45" },
+    { name: "Kung Pao Chicken", price: "10.45", imageUrl: kungPaoChicken },
     { name: "Szechuan Chicken", price: "10.45" },
   ],
   pork: [
@@ -110,7 +120,7 @@ export const menuData: MenuData = {
   ],
   beef: [
     { name: "Green Pepper Steak", price: "10.95" },
-    { name: "Beef with Broccoli", price: "10.95" },
+    { name: "Beef with Broccoli", price: "10.95", imageUrl: beefBroccoli },
     { name: "Beef with Cashew Nuts", price: "10.95" },
     { name: "Beef with Mixed Vegetable", price: "10.95" },
     { name: "Beef with Peapods", price: "10.95" },
@@ -122,7 +132,7 @@ export const menuData: MenuData = {
     { name: "Szechuan Beef", price: "10.95" },
   ],
   shrimp: [
-    { name: "Shrimp with Broccoli", price: "11.45" },
+    { name: "Shrimp with Broccoli", price: "11.45", imageUrl: shrimpBroccoli },
     { name: "Shrimp with Cashew Nuts", price: "11.45" },
     { name: "Shrimp with Lobster Sauce", price: "11.45" },
     { name: "Shrimp with Mix Vegetable", price: "11.45" },
@@ -149,7 +159,7 @@ export const menuData: MenuData = {
     { name: "Triple Delight w. Garlic Sauce", price: "15.95" },
     { name: "Four Seasons", price: "15.95" },
     { name: "Sesame Chicken", price: "14.45" },
-    { name: "General Tso's Chicken", price: "14.45" },
+    { name: "General Tso's Chicken", price: "14.45", imageUrl: generalTsosChicken },
     { name: "General Tso's Tofu", price: "14.45" },
     { name: "Orange Chicken", price: "14.45" },
     { name: "Mongolian Chicken", price: "14.45" },
